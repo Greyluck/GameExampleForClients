@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/00 - NewFiles/00 - Scenes/Level01.unity
+- path: Assets/00 - NewFiles/00 - Scenes/MenuScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
