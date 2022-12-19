@@ -9,12 +9,10 @@ public class Proyectile : MonoBehaviour
     private Vector3 direction = Vector2.up;
     private float speed = 10;
     
-    // TO EDIT
 	private GameObject scoreText;
 	public int newScore = 0;
 	public GameObject myCanvas;
 	public int winScore = 10;
-
 
 	void Start(){
 		//find the actual text where the score is showed
@@ -34,7 +32,7 @@ public class Proyectile : MonoBehaviour
 			scoreText.GetComponent<Text> ().text = "Score: " + newScore;
         }
         if (newScore == winScore){
-            myCanvas.SendMessage("Win");
+            //myCanvas.SendMessage("Win");
 		}
         Destroy(this.gameObject);
     }

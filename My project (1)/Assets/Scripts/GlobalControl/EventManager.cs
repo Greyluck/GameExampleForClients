@@ -31,7 +31,7 @@ public class EventManager : MonoBehaviour {
 	void Start ()
 	{
 		//Prende y apaga la musica (o sonido)
-		BtnMusic.onClick.AddListener (PlayStopMusic);
+		//BtnMusic.onClick.AddListener (PlayStopMusic);
 
 		//Activo un sonido
 		//BtnCoin.onClick.AddListener (PlayCoin);

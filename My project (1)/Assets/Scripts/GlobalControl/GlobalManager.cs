@@ -9,13 +9,21 @@ public class GlobalManager : MonoBehaviour {
 	public static int actualScore = 0;
 	private GameObject scoreText;
 
+	public static int actualLife = 3;
+	private GameObject lifeText;
+
 	// This add value to the score.
 	public static int addScore (){
 		actualScore++;
-		Debug.Log ("se aumento el score en 1");
+		Debug.Log ("+1 score");
 		return actualScore;
 	}
 
+	public static int restLife (){
+		actualLife--;
+		Debug.Log ("-1 life");
+		return actualLife;
+	}
 
 
 
