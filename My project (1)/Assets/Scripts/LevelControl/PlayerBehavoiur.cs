@@ -26,16 +26,22 @@ public class PlayerBehavoiur : MonoBehaviour
 
     // Update is calles once per frame
     void Update (){
-        // Movement
+        MovementBasics(); 
+        ShootingBasics();
+        RelaodingBasics();
+    }
+
+    private void MovementBasics(){
+        // Basic movement using A and D or using arrows
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
             this.transform.position += Vector3.left * this.characterSpeed * Time.deltaTime; 
-            //Debug.Log("Moving left");
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             this.transform.position += Vector3.right * this.characterSpeed * Time.deltaTime; 
-            //Debug.Log("Moving right");
         }
+    }
 
-        // Shoot
+    // The character has a small quantity of bullets to shoot.
+    private void ShootingBasics(){
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetMouseButtonDown(0)){
             if (bulletInStash>0){
                 bulletInStash--;
@@ -44,22 +50,23 @@ public class PlayerBehavoiur : MonoBehaviour
                 Debug.Log("NO AMMO! Reload needed!");
             }   
         }
-
-        // Reload
-        if (Input.GetKey(KeyCode.R) && bulletInStash < maxBullets){
-            StartReloading();
-        }
-        if (Input.GetKeyUp(KeyCode.R) && timeRemainingToRecharge < 2)
-            RestartReloading();
-
     }
 
     private void Shoot(){
         Instantiate (this.bulletPrefab, this.transform.position, Quaternion.identity);
         Debug.Log("We Have Shoot! - " + bulletInStash + " bullets remaining" );
     }
+    
+    
+    // The reloading process should take 2 seconds (And will be interrupted if not completed)
+    private void RelaodingBasics(){
+        if (Input.GetKey(KeyCode.R) && bulletInStash < maxBullets){
+            StartReloading();
+        }
+        if (Input.GetKeyUp(KeyCode.R) && timeRemainingToRecharge < 2)
+            AbortReloading();
+    }
 
-    // The reload should take 2 seconds
     private void StartReloading(){ 
         if (timeRemainingToRecharge > 0){
             Aura.SetActive(true);
@@ -73,7 +80,7 @@ public class PlayerBehavoiur : MonoBehaviour
             }
     }
 
-    private void RestartReloading(){
+    private void AbortReloading(){
         Aura.SetActive(false); 
         Debug.Log("Recharge aborted");
         timeRemainingToRecharge=2;        
