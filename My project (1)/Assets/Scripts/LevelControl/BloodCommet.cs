@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Asteroid : MonoBehaviour
+public class BloodCommet: MonoBehaviour
 {
     // Variables
     private Vector3 direction = Vector2.down;
-    private float speed = 5;
+    private float speed = 4;
 
     private GameObject lifeText;
 	public int newLife = 0;
@@ -27,6 +27,7 @@ public class Asteroid : MonoBehaviour
     private void OnTriggerEnter2D (Collider2D collider2D){
         if (collider2D.gameObject.tag == "Player")  {
 			newLife = GlobalManager.restLife();
+            newLife = GlobalManager.restLife();
 			lifeText.GetComponent<Text> ().text = "Life: " + newLife;
         }
         if (newLife < 1){

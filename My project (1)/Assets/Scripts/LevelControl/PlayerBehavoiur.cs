@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // This class manages the movement, shooting and reloading of the player
 public class PlayerBehavoiur : MonoBehaviour
@@ -13,16 +14,21 @@ public class PlayerBehavoiur : MonoBehaviour
     public int maxBullets = 15;
     private int bulletInStash = 15;
     
-    public int life = 3;
-
     private float timeRemainingToRecharge = 2;
     private GameObject Aura;
-        
+    
+    private GameObject ammoText;
+	public int newAmmo = 0;
+	public GameObject myCanvas;
+
     // Start is called before the first frame update
     void Start (){
-         Debug.Log("PlayerBehavoiur has started");
-         Aura = GameObject.Find("Aura");
-         Aura.SetActive(false);
+	    Debug.Log("PlayerBehavoiur has started");
+        Aura = GameObject.Find("Aura");
+        Aura.SetActive(false);
+
+        ammoText = GameObject.Find ("Txt_Ammo");
+		myCanvas = GameObject.Find ("Canvas");
     }
 
     // Update is calles once per frame
@@ -42,20 +48,22 @@ public class PlayerBehavoiur : MonoBehaviour
     }   
 
 
-
-    // The character has a small quantity of bullets to shoot.
+    // The charater has a small quantity of bullets to shoot.
     private void ShootingBasics(){
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetMouseButtonDown(0)){
             if (bulletInStash>0){
                 bulletInStash--;
                 Shoot();
             } else {
-                Debug.Log("NO AMMO! Reload needed!");
+                Debug.Log("NO ammo! Reload needed!");
             }   
         }
     }
 
     private void Shoot(){
+        newAmmo = GlobalManager.restAmmo();
+		ammoText.GetComponent<Text> ().text = "Ammo: " + newAmmo;
+
         Instantiate (this.bulletPrefab, this.transform.position, Quaternion.identity);
         Debug.Log("We Have Shoot! - " + bulletInStash + " bullets remaining" );
     }
@@ -78,6 +86,10 @@ public class PlayerBehavoiur : MonoBehaviour
         } else {
             Aura.SetActive(false);
             bulletInStash=15;
+
+            newAmmo = GlobalManager.reloadAmmo(maxBullets);
+    		ammoText.GetComponent<Text> ().text = "Ammo: " + newAmmo;
+
             Debug.Log("We Have Reloaded! We have " + bulletInStash + " now");
             timeRemainingToRecharge=2;
             }

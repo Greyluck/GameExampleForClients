@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\LevelControl\ObjectGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelControl\PowerMod.cs" />
      <Compile Include="Assets\Scripts\GlobalControl\EventManager.cs" />
+     <Compile Include="Assets\Scripts\LevelControl\BloodCommet.cs" />
      <None Include="Assets\Sprites\Ships and Stations\Rendering Tip.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

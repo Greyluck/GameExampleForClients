@@ -12,18 +12,31 @@ public class GlobalManager : MonoBehaviour {
 	public static int actualLife = 3;
 	private GameObject lifeText;
 
+	public static int actualAmmo = 15;
+	private GameObject ammoText;
+
+
 	// This add value to the score.
 	public static int addScore (){
 		actualScore++;
-		Debug.Log ("+1 score");
 		return actualScore;
 	}
 
 	public static int restLife (){
 		actualLife--;
-		Debug.Log ("-1 life");
 		return actualLife;
 	}
+
+	public static int restAmmo (){
+		actualAmmo--;
+		return actualAmmo;
+	}
+
+	public static int reloadAmmo (int bullets){
+		actualAmmo=bullets;
+		return actualAmmo;
+	}
+
 
 
 
