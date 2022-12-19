@@ -130,17 +130,25 @@ public class PlayerBehavoiur : MonoBehaviour
         timeRemainingToRecharge=2;        
     }
 
+    
     private void OnTriggerEnter2D (Collider2D collider2D){
+        
+        //TODO: Make it timed
         if (collider2D.gameObject.tag == "Nausea")  {
-            Nausea=true;
-            Pest.SetActive(true);
+            if (Nausea==false){
+                Nausea=true;
+                Pest.SetActive(true);
+            } else {
+                Nausea=false;
+                Pest.SetActive(false);
+            }
         }
+
 
         if (collider2D.gameObject.tag == "Shield")  {
             Shield=true;
             Invulneravility.SetActive(true);
             //TODO: Make invulnerable
-        }
-		
+        }		
     }
 }
