@@ -10,8 +10,8 @@ public class PlayerBehavoiur : MonoBehaviour
     
     public Proyectile bulletPrefab;
     private int bulletInStash = 15;
-    
-    
+    public int life = 3;
+        
     // Start is called before the first frame update
     void Start (){
          Debug.Log("PlayerBehavoiur has started");
@@ -22,14 +22,14 @@ public class PlayerBehavoiur : MonoBehaviour
         // Movement
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
             this.transform.position += Vector3.left * this.characterSpeed * Time.deltaTime; 
-            Debug.Log("Moving left");
+            //Debug.Log("Moving left");
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             this.transform.position += Vector3.right * this.characterSpeed * Time.deltaTime; 
-            Debug.Log("Moving right");
+            //Debug.Log("Moving right");
         }
 
         // Shoot
-        if (Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetMouseButtonDown(0)){
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetMouseButtonDown(0)){
             if (bulletInStash>0){
                 bulletInStash--;
                 Shoot();
