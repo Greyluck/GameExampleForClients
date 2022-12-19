@@ -7,14 +7,15 @@ public class PlayerBehavoiur : MonoBehaviour
 {
     // variables 
     private float characterSpeed = 5.0f;
+    private float characterLimit = 8.1f;
     
     public Proyectile bulletPrefab;
     public int maxBullets = 15;
     private int bulletInStash = 15;
+    
     public int life = 3;
 
     private float timeRemainingToRecharge = 2;
-
     private GameObject Aura;
         
     // Start is called before the first frame update
@@ -33,12 +34,14 @@ public class PlayerBehavoiur : MonoBehaviour
 
     private void MovementBasics(){
         // Basic movement using A and D or using arrows
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) &&  this.transform.position.x>(-characterLimit)){
             this.transform.position += Vector3.left * this.characterSpeed * Time.deltaTime; 
-        } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+        } else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && this.transform.position.x<characterLimit){
             this.transform.position += Vector3.right * this.characterSpeed * Time.deltaTime; 
         }
-    }
+    }   
+
+
 
     // The character has a small quantity of bullets to shoot.
     private void ShootingBasics(){

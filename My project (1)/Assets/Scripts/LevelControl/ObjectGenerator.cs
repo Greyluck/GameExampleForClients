@@ -63,7 +63,7 @@ public class ObjectGenerator : MonoBehaviour
         Instantiate (this.theChosenPrefab, finalCreationPosition, Quaternion.identity);
         powerUpDelay = Random.Range(15.0f, 20.0f);
         Invoke(nameof(PowerUpGeneratorMethod), powerUpDelay);
-        Debug.Log("Waiting " + powerUpDelay + " seconds until new PowerUp");
+            //Debug.Log("Waiting " + powerUpDelay + " seconds until new PowerUp");
     }
 
     private void PowerDownGeneratorMethod(){
@@ -86,7 +86,7 @@ public class ObjectGenerator : MonoBehaviour
         Instantiate (this.theChosenPrefab_Down, finalCreationPosition, Quaternion.identity);
         powerDownDelay = Random.Range(12.0f, 15.0f);
         Invoke(nameof(PowerDownGeneratorMethod), powerDownDelay);
-        Debug.Log("Waiting " + powerDownDelay + " seconds until new PowerUp");
+            //Debug.Log("Waiting " + powerDownDelay + " seconds until new PowerUp");
     }
     
 
