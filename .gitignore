@@ -1,2 +1,8 @@
-GameExampleForClients\My project (1)\Library\PackageCache\com.unity.burst@1.6.5\.Runtime\hostmac
-GameExampleForClients\My project (1)\Library
+# ignore ALL files in the folder
+My project (1)/Library
+
+# ignore ALL files in ANY directory named temp
+temp/
+
+# ignore ALL .meta files
+*.meta
