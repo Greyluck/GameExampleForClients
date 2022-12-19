@@ -8,15 +8,13 @@ public class Proyectile : MonoBehaviour
     private Vector3 direction = Vector2.up;
     private float speed = 10;
     
-    // Update is called once per frame
-    void Update()
-    {
+    // Update (Always go up)
+    void Update(){
         this.transform.position += this.direction * this.speed * Time.deltaTime;
     }
 
     // This will trigger every time the proyectile colides with any item
-    private void OnTriggerEnter2D (Collider2D other)
-    {
+    private void OnTriggerEnter2D (Collider2D other){
         Destroy(this.gameObject);
         Debug.Log("Bullet Destroyed");
     }

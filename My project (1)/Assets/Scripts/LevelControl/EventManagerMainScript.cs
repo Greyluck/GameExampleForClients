@@ -8,8 +8,8 @@ public class EventManagerMainScript : MonoBehaviour
 
     private void Awake(){
 
-        //Whenever the delegated gets invoket the function will be executed
-        //Asteroid.killed += EnemyKilled;
+        //TODO: //Whenever the delegated gets invoke the function will be executed
+        //TODO: //Asteroid.killed += EnemyKilled;
     }
 
     private void EnemyKilled(){
