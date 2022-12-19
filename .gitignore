@@ -6,3 +6,4 @@ temp/
 
 # ignore ALL .meta files
 *.meta
+*.log
