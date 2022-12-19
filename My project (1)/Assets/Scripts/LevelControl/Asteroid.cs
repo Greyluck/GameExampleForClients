@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
 {
     // Variables
     private Vector3 direction = Vector2.down;
-    private float speed = 1;
+    private float speed = 5;
     
     // Update (Always go down)
     void Update(){

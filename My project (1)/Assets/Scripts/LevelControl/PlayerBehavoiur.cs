@@ -9,12 +9,19 @@ public class PlayerBehavoiur : MonoBehaviour
     private float characterSpeed = 5.0f;
     
     public Proyectile bulletPrefab;
+    public int maxBullets = 15;
     private int bulletInStash = 15;
     public int life = 3;
+
+    private float timeRemainingToRecharge = 2;
+
+    private GameObject Aura;
         
     // Start is called before the first frame update
     void Start (){
          Debug.Log("PlayerBehavoiur has started");
+         Aura = GameObject.Find("Aura");
+         Aura.SetActive(false);
     }
 
     // Update is calles once per frame
@@ -39,9 +46,12 @@ public class PlayerBehavoiur : MonoBehaviour
         }
 
         // Reload
-        if (Input.GetKey(KeyCode.R) || Input.GetMouseButtonDown(1)){
-            Reload();
+        if (Input.GetKey(KeyCode.R) && bulletInStash < maxBullets){
+            StartReloading();
         }
+        if (Input.GetKeyUp(KeyCode.R) && timeRemainingToRecharge < 2)
+            RestartReloading();
+
     }
 
     private void Shoot(){
@@ -49,9 +59,23 @@ public class PlayerBehavoiur : MonoBehaviour
         Debug.Log("We Have Shoot! - " + bulletInStash + " bullets remaining" );
     }
 
-    private void Reload(){
-        bulletInStash=15;
-        Debug.Log("We Have Reloaded! We have " + bulletInStash + " now");
-        
+    // The reload should take 2 seconds
+    private void StartReloading(){ 
+        if (timeRemainingToRecharge > 0){
+            Aura.SetActive(true);
+            timeRemainingToRecharge -= Time.deltaTime;
+            Debug.Log("Reloading: " + timeRemainingToRecharge + "seconds remains");    
+        } else {
+            Aura.SetActive(false);
+            bulletInStash=15;
+            Debug.Log("We Have Reloaded! We have " + bulletInStash + " now");
+            timeRemainingToRecharge=2;
+            }
     }
+
+    private void RestartReloading(){
+        Aura.SetActive(false); 
+        Debug.Log("Recharge aborted");
+        timeRemainingToRecharge=2;        
+    }       
 }
