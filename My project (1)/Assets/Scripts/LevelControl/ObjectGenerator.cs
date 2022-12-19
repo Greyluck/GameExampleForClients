@@ -2,6 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+-------------------------------------------------------------------------------------------------------------
+This class populates the field with the following elements
+--------- Enemy ---------
+0 Asteroid
+--------- UP ---------
+1 Limpiador (UP):
+2 Invencibilidad (Up)
+3 Curador (UP)
+--------- DOWN ---------
+4 Descontrol (Down)
+5 Aniquilador (Down)
+----------------------------------------------------------------------------------------------------------------
+*/ 
+
 public class ObjectGenerator : MonoBehaviour
 {
     // Variables
@@ -22,7 +37,7 @@ public class ObjectGenerator : MonoBehaviour
     // Start 
     void Start(){
         //This will start a loop that creates the asteroids.
-        Invoke(nameof(AsteroidGeneratorMethod), 2);   
+        Invoke(nameof(AsteroidGeneratorMethod), 2); 
         Invoke(nameof(PowerUpGeneratorMethod), 15);   
         Invoke(nameof(PowerDownGeneratorMethod), 12);  
     }
