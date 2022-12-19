@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ebc5a4f01947fc54096adcd9e1723924, type: 3}
+    - target: {fileID: 2170896760955507281, guid: 44d899b057278494892d15d98a68695a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4194427836577939345, guid: 44d899b057278494892d15d98a68695a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -65,7 +69,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4204918690288993668, guid: 44d899b057278494892d15d98a68695a, type: 3}
       propertyPath: m_Name
-      value: PowerMod (2) Variant
+      value: PowerMod3_Life
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d899b057278494892d15d98a68695a, type: 3}
+--- !u!1 &6617186412053504693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4204918690288993668, guid: 44d899b057278494892d15d98a68695a, type: 3}
+  m_PrefabInstance: {fileID: 7029600866272159537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9210221590285055146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617186412053504693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675fd6db2126536418c85342a156132f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLife: 0
+  myCanvas: {fileID: 0}

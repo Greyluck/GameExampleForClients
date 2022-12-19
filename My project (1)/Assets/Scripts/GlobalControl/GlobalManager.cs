@@ -15,7 +15,9 @@ public class GlobalManager : MonoBehaviour {
 	public static int actualAmmo = 15;
 	private GameObject ammoText;
 
-
+	public static bool shield = false;
+	public static bool nausea = false;
+	
 	// This add value to the score.
 	public static int addScore (){
 		actualScore++;
@@ -23,6 +25,16 @@ public class GlobalManager : MonoBehaviour {
 	}
 
 	public static int restLife (){
+		actualLife--;
+		return actualLife;
+	}
+
+	public static int rest2Life (){
+		actualLife -= 2;
+		return actualLife;
+	}
+
+	public static int addLife (){
 		actualLife--;
 		return actualLife;
 	}
@@ -35,6 +47,16 @@ public class GlobalManager : MonoBehaviour {
 	public static int reloadAmmo (int bullets){
 		actualAmmo=bullets;
 		return actualAmmo;
+	}
+
+	public static bool activateShield (){
+		//TODO: Do something
+		return shield;
+	}
+	
+	public static bool activateNausea (){
+		//TODO: Do something
+		return  nausea;
 	}
 
 

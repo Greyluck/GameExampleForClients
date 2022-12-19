@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerDown2_Madness
       objectReference: {fileID: 0}
+    - target: {fileID: 4204918690288993668, guid: 44d899b057278494892d15d98a68695a, type: 3}
+      propertyPath: m_TagString
+      value: Nausea
+      objectReference: {fileID: 0}
     - target: {fileID: 6989444793821846083, guid: 44d899b057278494892d15d98a68695a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.17857246
@@ -85,3 +89,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d899b057278494892d15d98a68695a, type: 3}
+--- !u!1 &7459343474050651327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4204918690288993668, guid: 44d899b057278494892d15d98a68695a, type: 3}
+  m_PrefabInstance: {fileID: 6763903181567643963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6623969283255406554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7459343474050651327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e21639095364447b331984f0cca533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
