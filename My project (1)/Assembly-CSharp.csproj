@@ -41,9 +41,8 @@
      <Compile Include="Assets\Scripts\LevelControl\Proyectile.cs" />
      <Compile Include="Assets\Scripts\LevelControl\Asteroid.cs" />
      <Compile Include="Assets\Scripts\GlobalControl\MainMenuCanvas.cs" />
-     <Compile Include="Assets\Scripts\GlobalControl\KillScore.cs" />
      <Compile Include="Assets\Scripts\GlobalControl\ShowHUD.cs" />
-     <Compile Include="Assets\Scripts\GlobalControl\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\GlobalControl\GlobalManager.cs" />
      <Compile Include="Assets\Scripts\LevelControl\ObjectGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelControl\PowerMod.cs" />
      <Compile Include="Assets\Scripts\GlobalControl\EventManager.cs" />
